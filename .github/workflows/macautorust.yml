@@ -1,4 +1,4 @@
-name: RustDesk clean - macOS
+name: macdesk
 
 on:
   workflow_dispatch:
@@ -109,25 +109,6 @@ jobs:
                   print("home button not found on screen.")
           except Exception as e:
               print("Error locating home button:", e)
-
-      - name: Select Home with pyautogui
-        shell: python
-        run: |
-          import pyautogui
-          import time
-
-          time.sleep(2)  # Wait for modify remote menu to open
-
-          try:
-              location = pyautogui.locateCenterOnScreen('home.png', confidence=0.8)
-              if location:
-                  pyautogui.moveTo(location)
-                  pyautogui.click()
-                  print("Clicked Home at:", location)
-              else:
-                  print("Home button not found on screen.")
-          except Exception as e:
-              print("Error locating Home button:", e)
 
       - name: Take Screenshot via Python
         shell: python
