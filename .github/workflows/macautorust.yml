@@ -16,8 +16,8 @@ jobs:
         run: |
           curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.4.0/rustdesk-1.4.0-x86_64.dmg" -o "$GITHUB_WORKSPACE/rustdesk.dmg"
           hdiutil attach "$GITHUB_WORKSPACE/rustdesk.dmg"
-          cp -R "/Volumes/RustDesk/RustDesk.app" "/Applications/"
-          hdiutil detach "/Volumes/RustDesk"
+          cp -R "/Volumes/rustdesk-1.4.0/RustDesk.app" "/Applications/"
+          hdiutil detach "/Volumes/rustdesk-1.4.0"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -130,4 +130,3 @@ jobs:
         run: |
           echo "Sleeping for 4 hours to keep session active..."
           sleep 14400
-
