@@ -72,6 +72,63 @@ jobs:
           except Exception as e:
               print("Error locating Security menu:", e)
 
+      - name: Select allow in Menu with pyautogui
+        shell: python
+        run: |
+          import pyautogui
+          import time
+
+          time.sleep(2)  # Wait for menu to open
+
+          try:
+              location = pyautogui.locateCenterOnScreen('alw.png', confidence=0.8)
+              if location:
+                  pyautogui.moveTo(location)
+                  pyautogui.click()
+                  print("Clicked allow menu at:", location)
+              else:
+                  print("allow menu not found on screen.")
+          except Exception as e:
+              print("Error locating allow menu:", e)              
+
+      - name: Select Security in Menu with pyautogui
+        shell: python
+        run: |
+          import pyautogui
+          import time
+
+          time.sleep(2)  # Wait for menu to open
+
+          try:
+              location = pyautogui.locateCenterOnScreen('sec.png', confidence=0.8)
+              if location:
+                  pyautogui.moveTo(location)
+                  pyautogui.click()
+                  print("Clicked Security menu at:", location)
+              else:
+                  print("Security menu not found on screen.")
+          except Exception as e:
+              print("Error locating Security menu:", e)
+
+      - name: Select unlock
+        shell: python
+        run: |
+          import pyautogui
+          import time
+
+          time.sleep(2)  # Wait for menu to open
+
+          try:
+              location = pyautogui.locateCenterOnScreen('uss.png', confidence=0.8)
+              if location:
+                  pyautogui.moveTo(location)
+                  pyautogui.click()
+                  print("Clicked unlock menu at:", location)
+              else:
+                  print("unlock menu not found on screen.")
+          except Exception as e:
+              print("Error locating unlock menu:", e)
+              
       - name: Select Enable Remote Config Mod with pyautogui
         shell: python
         run: |
